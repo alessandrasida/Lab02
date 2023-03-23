@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.FXMLController">
+<BorderPane prefHeight="288.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.FXMLController">
    <top>
       <Label text="Alien Translator" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Courier New Bold" size="39.0" />
+            <Font name="Courier New Bold" size="34.0" />
          </font>
       </Label>
    </top>
+   <center>
+      <VBox prefHeight="68.0" prefWidth="375.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="375.0">
+               <children>
+                  <Label text="Alien Text" translateX="20.0" translateY="10.0" />
+                  <TextField fx:id="txtParola" promptText="Insert Text..." translateX="50.0" translateY="10.0" />
+                  <Button mnemonicParsing="false" onAction="#doTraduzione" text="Translate" translateX="80.0" translateY="10.0" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtRisultato" prefHeight="154.0" prefWidth="369.0" promptText="Welcome to Alien Dictionary v2022...">
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </TextArea>
+            <Button mnemonicParsing="false" onAction="#doClear" text="Clear Text">
+               <VBox.margin>
+                  <Insets left="4.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
